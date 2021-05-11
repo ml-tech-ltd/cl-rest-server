@@ -103,7 +103,11 @@ Also, argx-P is T iff argx is present in POSTED-CONTENT"
    (documentation :accessor api-documentation
                   :initarg :documentation
                   :initform nil
-                  :documentation "resource operation description"))
+                  :documentation "resource operation description")
+   (examples :accessor api-examples
+                  :initarg :examples
+                  :initform nil
+                  :documentation "resource operation examples"))
   (:metaclass closer-mop:funcallable-standard-class)
   (:documentation "The resource operation description"))
 
@@ -155,7 +159,7 @@ Also, argx-P is T iff argx is present in POSTED-CONTENT"
             (path resource-operation))))
 
 (defun make-resource-operation (name attributes args options)
-  "Make an resource operation."
+  "Make a resource operation."
   (multiple-value-bind (required-arguments optional-arguments)
       (parse-resource-operation-arguments args)
     (apply #'make-instance 'resource-operation
