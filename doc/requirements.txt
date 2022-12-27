@@ -1,4 +1,4 @@
-setuptools==34.3.0
+setuptools==65.5.1
 sphinx==3.0
 sphinx_bootstrap_theme
 django
